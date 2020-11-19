@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+<!-- <bean/> definitions here -->
+    <bean name="homeAddress" class="io.pragra.learning.HomeAddress" init-method="abcMethod">
+        <constructor-arg name="streetAddress" value="200"></constructor-arg>
+        <constructor-arg name="streetName" value="Mathson Blvd"></constructor-arg>
+        <constructor-arg name="city" value="Mississauga"></constructor-arg>
+        <constructor-arg name="country" value="Canada"></constructor-arg>
+    </bean>
+
+    <bean name="officeAddress" class="io.pragra.learning.OfficeAddress">
+        <property name="officeName" value="Pragra Inc"></property>
+    </bean>
+
+    <bean name="person" class="io.pragra.learning.Person">
+        <constructor-arg name="name" value="Vivek"></constructor-arg>
+        <constructor-arg name="age" value="32"></constructor-arg>
+        <constructor-arg name="iAddress" ref="officeAddress"></constructor-arg>
+        <constructor-arg name="hobbies">
+            <list>
+                <value>Watching T.V.</value>
+                <value>Coding</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean name="person2" class="io.pragra.learning.Person">
+        <constructor-arg name="name" value="Vivek"></constructor-arg>
+        <constructor-arg name="age" value="32"></constructor-arg>
+        <constructor-arg name="iAddress" ref="homeAddress"></constructor-arg>
+        <constructor-arg name="hobbies">
+            <list>
+                <value>Watching T.V.</value>
+                <value>Coding</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
